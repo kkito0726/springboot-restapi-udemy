@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ken.springDemo.exception.ItemNotFoundException;
 import com.ken.springDemo.model.Item;
 import com.ken.springDemo.service.ItemService;
 
@@ -27,7 +26,7 @@ public class ItemController {
 
 	@GetMapping(value = "/items/{itemId}")
 	public Item getItem(@PathVariable("itemId") Long itemId) {
-		return itemService.getItem(itemId).orElseThrow(() -> new ItemNotFoundException(itemId));
+		return itemService.getItem(itemId);
 	}
 
 	@PostMapping("/items")

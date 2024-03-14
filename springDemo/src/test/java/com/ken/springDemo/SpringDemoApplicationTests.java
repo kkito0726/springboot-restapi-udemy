@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.ken.springDemo.controller.ItemController;
 import com.ken.springDemo.repository.ItemRepository;
-import com.ken.springDemo.service.ItemService;
+import com.ken.springDemo.service.ItemServiceImpl;
 
 @SpringBootTest
 class SpringDemoApplicationTests {
@@ -17,7 +17,7 @@ class SpringDemoApplicationTests {
 	private ItemController itemController;
 
 	@Autowired
-	private ItemService itemService;
+	private ItemServiceImpl itemService;
 
 	@Autowired
 	private ItemRepository itemRepository;
