@@ -1,5 +1,7 @@
 package com.ken.springDemo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,5 +23,11 @@ public class JsonPlaceHolderController {
 	@GetMapping("/getTodos/{userId}")
 	public Todo getJson(@PathVariable Long userId) {
 		return jsonPlaceholderService.getTodo(userId);
+	}
+
+	@GetMapping("/getTodosByUserId/{userId}")
+	public List<Todo> getTodosByUserId(@PathVariable Long userId) {
+
+		return jsonPlaceholderService.getTodosByUserId(userId);
 	}
 }
